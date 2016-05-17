@@ -10,7 +10,7 @@ RUN curl -sL https://npmjs.org/install.sh | sh && \
 
 # Packages
 RUN apt-get update && apt-get install -y \
-	git \
+	git && \
 	rm -rf /var/lib/apt/lists/*
 
 # Set up the application directory
