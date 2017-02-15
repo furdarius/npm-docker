@@ -8,13 +8,31 @@ Lightweight Docker image with stable verison of npm package manager for using in
 
 ### How?
 
-* Pull it: `docker pull furdarius/npm-docker:latest`
-* Use it: `docker run -v $(pwd):/app furdarius/npm-docker:latest install`
+* Pull it
+
+  ```bash
+  docker pull furdarius/npm-docker:latest
+  ```
+
+* Use it:
+  
+  ```bash
+  docker run --rm --net=host -it -v $(pwd):/app -v ~/.npm:/npm-data -e "NPM_CONFIG_CACHE=/npm-data" furdarius/npm-docker:latest install
+  ```
 
 ##### Alpine version available
 
-* Pull it: `docker pull furdarius/npm-docker:alpine`
-* Use it: `docker run -v $(pwd):/app furdarius/npm-docker:alpine install`
+* Pull it
+
+  ```bash
+  docker pull furdarius/npm-docker:alpine
+  ```
+
+* Use it:
+  
+  ```bash
+  docker run --rm --net=host -it -v $(pwd):/app -v ~/.npm:/npm-data -e "NPM_CONFIG_CACHE=/npm-data" furdarius/npm-docker:alpine install
+  ```
 
 
 [hub]: https://hub.docker.com/r/furdarius/npm-docker/
